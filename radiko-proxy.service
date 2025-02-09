@@ -1,0 +1,17 @@
+[Unit]
+Description=Radiko Proxy Service
+After=network.target
+
+[Service]
+Environment=NODE_VERSION=default
+ExecStart=/path/to/.nvm/nvm-exec npm start
+WorkingDirectory=/path/to/radiko-proxy
+User=youruser
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=radiko-proxy
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,25 @@
+{
+  "name": "radiko-proxy",
+  "version": "1.0.0",
+  "description": "Radiko Proxy",
+  "main": "dist/proxy.js",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "create-playlist": "node dist/playlist.js",
+    "start": "node dist/proxy.js",
+    "dev": "ts-node-dev --respawn src/proxy.ts",
+    "format": "biome format --write ./src"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "^20.11.19",
+    "rimraf": "^6.0.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "fast-xml-parser": "^4.5.1",
+    "hono": "^4.7.0"
+  }
+}
